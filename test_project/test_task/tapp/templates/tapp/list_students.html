@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List of students</title>
+</head>
+	<body>
+		<h2>List of students:</h2>
+			<h3>All students: {{ all_students }}</h3>
+			<h3>Students on faculty "{{ f1 }}" = {{ students_f1 }}</h3>
+			<h3>Faculty, students: </h3>
+				<ul>
+					{% for a_s in all_students_f %}
+						{% for name, count in a_s.items %}
+							<li>{{ name }}: {{ count }}</li>
+						{% endfor %}
+						--------
+					{% endfor %}
+				</ul>
+			<h3>List of students</h3>
+				<ul>
+					{% for student in list_students %}
+						{% for key, value in student.items %}
+							<li>{{ key }}: {{ value }}</li>
+						{% endfor %}
+						--------
+					{% endfor %}
+				</ul>
+	</body>
+</html>
